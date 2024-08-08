@@ -35,11 +35,9 @@ function App() {
 
   return (
     <main className="main">
-      <h1>
-        React Todo <span>Simplifique o seu dia, do jeito React!</span>
-      </h1>
-      <TodoList todos={todos} removeTodo={removeTodo} changeTodo={changeTodo} />
+      <h1>React Todo-list</h1>
       <TodoCreate createTodo={createTodo} />
+      <TodoList todos={todos} removeTodo={removeTodo} changeTodo={changeTodo} />
     </main>
   );
 }

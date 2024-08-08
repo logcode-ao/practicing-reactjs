@@ -43,7 +43,7 @@ export function TodoShow({ changeTodo, removeTodo, todo }: Props) {
       <p className={todo.completed ? "completed" : ""}>{todo.title}</p>
 
       <div className="actions">
-        <button onClick={handleDelete}>
+        <button className="detele" onClick={handleDelete}>
           <Trash />
         </button>
         <button onClick={handleEdit}>
