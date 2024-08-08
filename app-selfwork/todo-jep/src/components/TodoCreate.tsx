@@ -26,7 +26,6 @@ export function TodoCreate({ createTodo }: Props) {
         value={title}
         onChange={handleChange}
       />
-      ;
     </form>
   );
 }

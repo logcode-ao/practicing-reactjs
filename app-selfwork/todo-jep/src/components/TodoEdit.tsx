@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import { ChangeEvent, FormEvent, useState } from "react";
+import { Check } from "lucide-react";
 interface Props {
   todo: {
     id: string;
@@ -12,20 +12,20 @@ interface Props {
 export function TodoEdit({ onSubmit, todo }: Props) {
   const [title, setTitle] = useState(todo.title);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmit(todo.id, title);
   };
 
   return (
-    <form className="todo-edit">
+    <form className="todo-edit" onSubmit={handleSubmit}>
       <input type="text" value={title} onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>
-        <img src={CheckIcon} title="Save" />
+      <button type="submit">
+        <Check />
       </button>
     </form>
   );

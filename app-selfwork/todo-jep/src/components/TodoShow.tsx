@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TodoEdit } from "./TodoEdit";
-
+import { Trash, Pencil } from "lucide-react";
 interface Props {
   todo: {
     id: string;
@@ -14,15 +14,15 @@ interface Props {
 export function TodoShow({ changeTodo, removeTodo, todo }: Props) {
   const [showEdit, setShowEdit] = useState(false);
 
-  const handleDelete = (e) => {
+  const handleDelete = () => {
     removeTodo(todo.id);
   };
 
-  const handleEdit = (e) => {
+  const handleEdit = () => {
     setShowEdit(true);
   };
 
-  const handleDoubleClick = (e) => {
+  const handleDoubleClick = () => {
     changeTodo(todo.id, todo.title, !todo.completed);
   };
 
@@ -44,10 +44,10 @@ export function TodoShow({ changeTodo, removeTodo, todo }: Props) {
 
       <div className="actions">
         <button onClick={handleDelete}>
-          <img src={DeleteIcon} title="Delete" />
+          <Trash />
         </button>
         <button onClick={handleEdit}>
-          <img src={EditIcon} title="Edit" />
+          <Pencil />
         </button>
       </div>
     </li>
