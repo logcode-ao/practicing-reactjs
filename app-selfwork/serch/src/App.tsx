@@ -1,3 +1,9 @@
+import { InputSearch } from "./components/InpotSearch";
+
 export function App() {
-  return <h1>fffff</h1>;
+  return (
+    <div className="h-screen">
+      <InputSearch />
+    </div>
+  );
 }
