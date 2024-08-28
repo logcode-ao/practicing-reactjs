@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { ResultList } from "./components/ResultList";
 import { Resultype } from "./data/types";
+import { Button } from "./components/Button";
 
 function App() {
   const [data, setData] = useState<Resultype[]>([]);
@@ -28,6 +29,7 @@ function App() {
     <main className="min-h-screen">
       <div className="max-w-2xl min-h-96 mt-10 mx-auto">
         <Header setSearch={setSearch} />
+        <Button />
 
         <ResultList data={data} />
       </div>
