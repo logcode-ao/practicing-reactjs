@@ -30,8 +30,10 @@ export default function Home() {
     <main className="min-h-screen">
       <div className="max-w-2xl min-h-96 mx-auto">
         <HeaderMenu />
-        <Header setSearch={setSearch} />
-        <Button />
+        <div className="flex justify-around">
+          <Header setSearch={setSearch} />
+          <Button />
+        </div>
 
         <ResultList data={data} />
       </div>
