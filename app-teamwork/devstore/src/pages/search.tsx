@@ -6,7 +6,7 @@ export function Search() {
 
   return (
     <section className="px-8 items-center justify-center">
-      <div className="flex gap-6 flex-wrap">
+      <div className="py-4 grid grid-cols-3 gap-6">
         {products.map((product) => {
           return (
             <div
