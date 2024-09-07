@@ -1,21 +1,22 @@
 import { CardDescricacao } from "../CardDescricacao";
+import data from "../data/data.json";
 
 export function Search() {
+  const { products } = data;
+
   return (
-    <section className="px-8 flex flex-col gap-6 items-center justify-center">
-      <div className="flex gap-6 flex-wrap max-w-7xl">
-        <div className="size-[384px] border border-red-950 bg-[url('../public/products/moletom-ai-side.png')] bg-cover bg-center bg-zinc-900">
-          <CardDescricacao />
-        </div>
-        <div className="size-[384px] border border-red-950 bg-[url('../public/products/moletom-ia-p-devs.png')] bg-cover bg-center bg-zinc-900">
-          <CardDescricacao />
-        </div>
-        <div className="size-[384px] border border-red-950 bg-[url('../public/products/moletom-java.png')] bg-cover bg-center bg-zinc-900">
-          <CardDescricacao />
-        </div>
-        <div className="size-[384px] border border-red-950 bg-[url('../public/products/moletom-never-stop-learning.png')] bg-cover bg-center bg-zinc-900">
-          <CardDescricacao />
-        </div>
+    <section className="px-8 items-center justify-center">
+      <div className="flex gap-6 flex-wrap">
+        {products.map((product) => {
+          return (
+            <div
+              key={product.id}
+              className="flex justify-center items-end size-[384px] border border-red-950 bg-[url('../public/products/moletom-ai-side.png')] bg-cover bg-center bg-zinc-900"
+            >
+              <CardDescricacao name={product.title} price={product.price} />
+            </div>
+          );
+        })}
       </div>
     </section>
   );
