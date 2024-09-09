@@ -5,8 +5,8 @@ export function Search() {
   const { products } = data;
 
   return (
-    <section className="px-8 items-center justify-center">
-      <div className="py-4 grid grid-cols-3 gap-6">
+    <section className="px-8 flex items-center justify-center">
+      <div className="py-4 grid grid-cols-3 gap-6 max-w-7xl">
         {products.map((product) => {
           return (
             <div
