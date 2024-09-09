@@ -6,7 +6,7 @@ type CardDescricacaoProps = {
 export function CardDescricacao({ name, price }: CardDescricacaoProps) {
   return (
     <div
-      className="mb-16 px-px
+      className="mb-16 px-px absolute z-10
 border-zinc-500 border-2 w-60 flex gap-1 h-12 bg-black/60 rounded-full items-center justify-center"
     >
       <p className="text-sm text-zinc-100 flex-1 w-[126px] truncate pl-4">
