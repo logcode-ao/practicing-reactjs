@@ -26,14 +26,14 @@ export default function AddToCartPage() {
             <div>
               <p className="text-inherit mb-8 font-thin">{product.description}</p>
               <p className="font-thin">
-                <span className="rounded-3xl w-20 h-10 bg-purple-600 text-center p-2 mr-5 hover:cursor-pointer font-bold">
+                <span className="rounded-3xl w-20 h-10 bg-[#8B5CF6] text-center p-2 mr-5 hover:cursor-pointer font-bold">
                   R${product.price}
                 </span>
                 Em 12x s/ juros de R$ 8,25
               </p>
               <h3 className="mt-6 font-bold mb-4">Tamanhos</h3>
               <Tamanhos />
-              <button className="rounded-3xl w-[350px] h-10 bg-green-500 text-center p-2 mr-5 hover:cursor-pointer">Adicionar ao carrinho</button>
+              <button className="rounded-3xl w-[357px] h-10 bg-[#10B981] text-center p-2 mr-5 hover:cursor-pointer">Adicionar ao carrinho</button>
             </div>
           </div>
         </div>
