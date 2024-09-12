@@ -1,4 +1,4 @@
-import { CardDescricacao } from "../CardDescricacao";
+import { CardDescricacao } from "../components/CardDescricacao";
 import data from "../data/data.json";
 
 export function Search() {
