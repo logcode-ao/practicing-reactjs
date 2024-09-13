@@ -1,8 +1,17 @@
-import { CardDescricacao } from "../CardDescricacao";
+import { useSearchParams } from "react-router-dom";
+import { CardDescricacao } from "../components/CardDescricacao";
 import data from "../data/data.json";
 
 export function Search() {
   const { products } = data;
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q");
+
+  const filter = products.filter((product) =>
+    product.description.includes(query?.toString() ?? "")
+  );
+
+  console.log(filter);
 
   return (
     <section className="px-8 flex items-center justify-center">
