@@ -13,7 +13,11 @@ export function Search() {
               key={product.id}
               className="flex justify-center items-end size-[384px] border border-red-950 bg-zinc-900"
             >
-              <img src={product.image} alt="Imagem dos altigos" />
+              <img
+                src={product.image}
+                alt="Imagem dos altigos"
+                className="w-full object-cover"
+              />
               <CardDescricacao name={product.title} price={product.price} />
             </div>
           );
