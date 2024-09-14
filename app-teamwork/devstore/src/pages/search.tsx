@@ -11,20 +11,15 @@ export function Search() {
           return (
             <div
               key={product.id}
-              className="flex justify-center items-end size-[384px] border border-red-950 bg-zinc-900"
+              className="flex justify-center items-end size-[384px] bg-zinc-900"
             >
               <figure className="col-span-2 overflow-hidden ">
                 <img
                   src={product.image}
-                  alt="casacos"
-                  className="w-full object-cover"
+                  alt={product.title}
+                  className="w-full object-cover border border-red-100"
                 />
               </figure>
-              {/* <img
-                src={product.image}
-                alt="Imagem dos altigos"
-                className="w-full object-cover"
-              /> */}
               <CardDescricacao name={product.title} price={product.price} />
             </div>
           );
