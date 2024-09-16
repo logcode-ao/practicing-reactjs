@@ -8,19 +8,17 @@ export function Search() {
   const query = searchParams.get("q");
 
   const filter = products.filter((product) =>
-    product.description.includes(query?.toString() ?? "")
+    product.title.toLowerCase().includes((query ?? "").toLowerCase())
   );
-
-  console.log(filter);
 
   return (
     <section className="px-8 flex items-center justify-center">
       <div className="py-4 grid grid-cols-3 gap-6 max-w-7xl">
-        {products.map((product) => {
+        {filter.map((product) => {
           return (
             <div
               key={product.id}
-              className="flex justify-center items-end size-[384px] border border-red-950 bg-zinc-900"
+              className="flex justify-center items-end size-[384px] bg-zinc-900"
             >
               <img src={product.image} alt="Imagem dos altigos" />
               <CardDescricacao name={product.title} price={product.price} />
