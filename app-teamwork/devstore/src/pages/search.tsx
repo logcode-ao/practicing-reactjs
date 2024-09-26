@@ -20,7 +20,13 @@ export function Search() {
               key={product.id}
               className="flex justify-center items-end size-[384px] bg-zinc-900"
             >
-              <img src={product.image} alt="Imagem dos altigos" />
+              <figure className="col-span-2 overflow-hidden ">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full object-cover border border-red-100"
+                />
+              </figure>
               <CardDescricacao name={product.title} price={product.price} />
             </div>
           );
