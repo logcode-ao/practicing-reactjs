@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { products } from "../data/data.json";
 import { Tamanhos } from "../components/Tamanhos";
+import { useCart } from "../context/cartContext";
 export default function AddToCartPage() {
   const { id } = useParams();
+  const { addToCart } = useCart();
 
   const product = products.find((product) => product.id === Number(id));
 
@@ -32,7 +34,10 @@ export default function AddToCartPage() {
             </p>
             <h3 className="mt-6 font-bold mb-4">Tamanhos</h3>
             <Tamanhos />
-            <button className="rounded-3xl w-[357px] h-10 bg-[#10B981] text-center p-2 mr-5 hover:cursor-pointer">
+            <button
+              className="rounded-3xl w-[357px] h-10 bg-[#10B981] text-center p-2 mr-5 hover:cursor-pointer"
+              onClick={() => addToCart(product.id)}
+            >
               Adicionar ao carrinho
             </button>
           </div>

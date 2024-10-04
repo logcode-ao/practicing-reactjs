@@ -1,9 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import foto from "../assets/foto1.png";
 import { FormEvent } from "react";
+import { useCart } from "../context/cartContext";
 
 export function Header() {
   const navigate = useNavigate();
+  const { items } = useCart();
+  console.log(items);
+
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -32,7 +36,7 @@ export function Header() {
         </form>
       </div>
       <ul className="flex gap-3 items-center">
-        <li>Cart(3)</li>
+        <li>Cart({items.length})</li>
         <li>|</li>
         <li className="flex gap-1 items-center">
           <span>Account</span>{" "}
